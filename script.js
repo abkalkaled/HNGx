@@ -8,8 +8,8 @@ function displayCurrentDayOfTheWeek() {
     "Friday",
     "Saturday",
   ];
-  const currentDate = new Date();
-  const dayOfTheWeek = daysOfTheWeek[currentDate.getDay()];
+  var currentDate = new Date();
+  var dayOfTheWeek = daysOfTheWeek[currentDate.getDay()];
   document.querySelector("[data-testid='currentDayOfTheWeek']").textContent =
     "" + dayOfTheWeek;
 }

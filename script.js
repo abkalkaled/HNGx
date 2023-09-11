@@ -1,5 +1,5 @@
-function dispayDay() {
-  const daysOfTheWeek = [
+function displayCurrentDayOfTheWeek() {
+  var daysOfTheWeek = [
     "Sunday",
     "Monday",
     "Tuesday",
@@ -9,17 +9,16 @@ function dispayDay() {
     "Saturday",
   ];
   const currentDate = new Date();
-  const dayIndex = currentDate.getUTCDay();
-  const dayOfTheWeek = daysOfTheWeek[dayIndex];
-  document.querySelector('[data-testid="currentDayOfTheWeek"]').textContent =
-    "Day of the week" + dayOfTheWeek;
+  const dayOfTheWeek = daysOfTheWeek[currentDate.getDay()];
+  document.querySelector("[data-testid='currentDayOfTheWeek']").textContent =
+    "" + dayOfTheWeek;
 }
 
 function displayUTCTime() {
   const now = new Date();
-  const utcString = now.toUTCString();
-  const utcTimeCont = document.querySelector('[data-testid="currentUTCTime"]');
-  utcTimeCont.textContent = utcString;
+  const milliseconds = now.getTime();
+  document.querySelector('[data-testid="currentUTCTime"]').innerHTML =
+    "" + milliseconds;
 }
 
 setInterval(displayUTCTime, 1000);

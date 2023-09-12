@@ -1,5 +1,6 @@
+// Day of the week
 function displayCurrentDayOfTheWeek() {
-  var daysOfTheWeek = [
+  const daysOfTheWeek = [
     "Sunday",
     "Monday",
     "Tuesday",
@@ -8,11 +9,15 @@ function displayCurrentDayOfTheWeek() {
     "Friday",
     "Saturday",
   ];
-  var currentDate = new Date();
-  var dayOfTheWeek = daysOfTheWeek[currentDate.getDay()];
-  document.querySelector("[data-testid='currentDayOfTheWeek']").textContent =
-    "" + dayOfTheWeek;
+  const currentDate = new Date();
+  const dayOfTheWeek = daysOfTheWeek[currentDate.getUTCDay()];
+  document.querySelector("[data-testid='currentDayOfTheWeek']").innerHTML =
+    dayOfTheWeek;
 }
+
+setInterval(displayCurrentDayOfTheWeek);
+
+/**Time of the day */
 
 function displayUTCTime() {
   const now = new Date();
